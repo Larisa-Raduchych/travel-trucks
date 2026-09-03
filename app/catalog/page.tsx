@@ -1,15 +1,24 @@
 "use client";
-
+import { useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { getCampers } from "@/lib/api";
 import CamperCard from "@/components/CamperCard/CamperCard";
+import Filters, { FilterValues } from "@/components/Filters/Filters";
 import css from "./page.module.css";
 
 export default function CatalogPage() {
+
+const [filters, setFilters] = useState<FilterValues>({
+    location: "",
+    form: "",
+    transmission: "",
+    engine: "",
+  });
+
 const { data, fetchNextPage, hasNextPage, isFetching, isError } =
     useInfiniteQuery({
-      queryKey: ["campers"],
-      queryFn: ({ pageParam }) => getCampers({ page: pageParam, perPage: 4 }),
+      queryKey: ["campers", filters],
+      queryFn: ({ pageParam }) => getCampers({ page: pageParam, perPage: 4, ...filters }),
       initialPageParam: 1,
       getNextPageParam: (lastPage) =>
         lastPage.page < lastPage.totalPages ? lastPage.page + 1 : undefined,
@@ -19,9 +28,12 @@ const { data, fetchNextPage, hasNextPage, isFetching, isError } =
 
 
   return (<div className={css.catalog}>
+    <Filters onSearch={setFilters} />
+
+    <div className={css.results}>
     {isError && <p>Не вдалося завантажити кемпери.</p>}
 
-      {/* Список карток */}
+      {/* Список карток праворуч */}
       <ul className={css.list}>
         {campers.map((camper) => (
           <li key={camper.id}>
@@ -40,5 +52,6 @@ const { data, fetchNextPage, hasNextPage, isFetching, isError } =
           {isFetching ? "Завантаження..." : "Load more"}
         </button>
       )}
+    </div>
     </div>);
 }

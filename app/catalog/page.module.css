@@ -1,5 +1,11 @@
 .catalog {
+    display: flex;
+  gap: 40px;
   padding: 40px 64px;
+}
+
+.results {
+  flex: 1;
 }
 
 .list {
