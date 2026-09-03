@@ -9,7 +9,7 @@ import {
 
 // axios-інстанс
 const api = axios.create({
-  baseURL: "https://campers-api.goit.study",
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
 });
 
 // Параметри для каталогу (пагінація + фільтри)

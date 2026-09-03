@@ -27,6 +27,7 @@ export interface CamperListItem {
   price: number;
   rating: number;
   location: string;
+  description: string;  
   form: string;
   length: string;
   width: string;
