@@ -71,3 +71,9 @@
   border-radius: 200px;
   text-decoration: none;
 }
+
+.rating, .location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

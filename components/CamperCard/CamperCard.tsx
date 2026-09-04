@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CamperListItem } from "@/types/camper";
+import { FaStar, FaMapMarkerAlt } from "react-icons/fa";
 import css from "./CamperCard.module.css";
 
 interface CamperCardProps {
@@ -23,9 +24,10 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
         <div className={css.meta}>
           <span className={css.rating}>
-            ⭐ {camper.rating} ({camper.totalReviews} Reviews)
+            <FaStar /> {camper.rating} ({camper.totalReviews} Reviews)
           </span>
-          <span className={css.location}>📍 {camper.location}</span>
+          <span className={css.location}><FaMapMarkerAlt />
+             {camper.location}</span>
         </div>
 
         <p className={css.description}>

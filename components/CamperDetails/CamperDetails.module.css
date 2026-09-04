@@ -1,0 +1,149 @@
+.details {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Назва */
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+}
+
+/* Рейтинг + локація */
+.meta {
+  display: flex;
+  gap: 16px;
+  font-size: 16px;
+  color: #101828;
+}
+
+/* Ціна */
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #101828;
+}
+
+/* Опис */
+.description {
+  color: #475467;
+  line-height: 1.5;
+}
+
+/* Теги (feature chips) */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature {
+  padding: 12px 18px;
+  background: #f2f4f7;
+  border-radius: 100px;
+  font-size: 16px;
+  color: #101828;
+  text-transform: capitalize;
+}
+
+/* Таблиця характеристик */
+.vehicleDetails {
+  margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin-bottom: 24px;
+}
+
+.specs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dadde1;
+}
+
+.spec span:first-child {
+  color: #475467;
+}
+
+.spec span:last-child {
+  font-weight: 600;
+  color: #101828;
+}
+
+/* Відгуки */
+.reviews {
+  margin-top: 40px;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  list-style: none;
+  padding: 0;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f2f4f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--grey-green);
+}
+
+.reviewerName {
+  font-weight: 600;
+  color: #101828;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.starFull {
+  color: #ffc531;
+}
+
+.starEmpty {
+  color: #f2f4f7;
+}
+
+.reviewText {
+  color: #475467;
+  line-height: 1.5;
+  margin-top: 8px;
+}
