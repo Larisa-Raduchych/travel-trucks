@@ -100,3 +100,19 @@
 .clearBtn:hover {
   border-color: var(--grey-green);
 }
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mapIcon {
+  position: absolute;
+  left: 18px;
+  color: #101828;
+}
+
+.input {
+  padding-left: 44px;   /* місце для іконки */
+}

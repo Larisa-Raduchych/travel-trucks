@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCamperById, getCamperReviews } from "@/lib/api";
 import Gallery from "@/components/Gallery/Gallery";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaMapMarkerAlt } from "react-icons/fa";
 import BookingForm from "@/components/BookingForm/BookingForm";
 // import Loader from "@/components/Loader/Loader";  
 import css from "./CamperDetails.module.css";
@@ -46,8 +46,12 @@ const renderStars = (rating: number) => {
       {/* Інформація */}
       <h1 className={css.name}>{camper.name}</h1>
       <div className={css.meta}>
-        <span>⭐ {camper.rating} ({camper.totalReviews} Reviews)</span>
-        <span>📍 {camper.location}</span>
+        <span className={css.rating}>
+    <FaStar /> {camper.rating} ({camper.totalReviews} Reviews)
+  </span>
+  <span className={css.location}>
+    <FaMapMarkerAlt /> {camper.location}
+  </span>
       </div>
       <p className={css.price}>€{camper.price.toFixed(2)}</p>
       <p className={css.description}>{camper.description}</p>

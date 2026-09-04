@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { FaXmark } from "react-icons/fa6";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import css from "./Filters.module.css";
 
 // що передаємо при Search
@@ -55,13 +57,16 @@ export default function Filters({ onSearch }: FiltersProps) {
       {/* Location */}
       <div className={css.group}>
         <label className={css.label}>Location</label>
-        <input
-          type="text"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          placeholder="City"
-          className={css.input}
-        />
+        <div className={css.inputWrapper}>
+    <FaMapMarkerAlt className={css.mapIcon} />
+    <input
+      type="text"
+      value={location}
+      onChange={(e) => setLocation(e.target.value)}
+      placeholder="City"
+      className={css.input}
+    />
+  </div>
       </div>
 
       {/* Camper form */}
@@ -117,7 +122,8 @@ export default function Filters({ onSearch }: FiltersProps) {
         Search
       </button>
       <button className={css.clearBtn} onClick={handleClear}>
-        Clear filters
+        <FaXmark />
+  Clear filters
       </button>
     </aside>
   );
