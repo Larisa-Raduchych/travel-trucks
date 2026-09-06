@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { getCampers } from "@/lib/api";
 import CamperCard from "@/components/CamperCard/CamperCard";
+import Loader from "@/components/Loader/Loader";
 import Filters, { FilterValues } from "@/components/Filters/Filters";
-import css from "./page.module.css";
+import css from "./catalogPage.module.css";
 
 export default function CatalogPage() {
 
@@ -49,7 +50,7 @@ const { data, fetchNextPage, hasNextPage, isFetching, isError } =
           onClick={() => fetchNextPage()}
           disabled={isFetching}
         >
-          {isFetching ? "Завантаження..." : "Load more"}
+          {isFetching ? <Loader /> : "Load more"}
         </button>
       )}
     </div>

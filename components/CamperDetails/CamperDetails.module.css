@@ -4,7 +4,37 @@
   padding: 48px 64px;
   display: flex;
   flex-direction: column;
+  gap: 60px;
+}
+
+/* Секція 1: галерея + інфо */
+.topSection {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.galleryCol {
+  flex-shrink: 0;
+  width: 638px;
+}
+
+.infoCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 24px;
+}
+
+/* Секція 2: відгуки + форма */
+.bottomSection {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.formCol {
+  flex-shrink: 0;
 }
 
 /* Назва */
@@ -91,9 +121,8 @@
   color: #101828;
 }
 
-/* Відгуки */
-.reviews {
-  margin-top: 40px;
+.reviewsCol {
+  flex: 1;
 }
 
 .reviewsList {
