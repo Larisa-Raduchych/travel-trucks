@@ -1,5 +1,12 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import css from "./page.module.css";
+
+
+export const metadata: Metadata = {
+  title: "TravelTrucks — Camper Rental",
+  description: "Rent the best campers for your travels",
+}; 
 
 export default function Home() {
   return (
