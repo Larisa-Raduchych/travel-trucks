@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CamperListItem } from "@/types/camper";
-import { FaStar, FaMapMarkerAlt } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { LuMap } from "react-icons/lu";
 import css from "./CamperCard.module.css";
 
 interface CamperCardProps {
@@ -10,6 +11,7 @@ interface CamperCardProps {
 export default function CamperCard({ camper }: CamperCardProps) {
   return (
     <div className={css.card}>
+       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={camper.coverImage}
         alt={camper.name}
@@ -26,7 +28,7 @@ export default function CamperCard({ camper }: CamperCardProps) {
           <span className={css.rating}>
             <FaStar /> {camper.rating} ({camper.totalReviews} Reviews)
           </span>
-          <span className={css.location}><FaMapMarkerAlt />
+          <span className={css.location}><LuMap />
              {camper.location}</span>
         </div>
 

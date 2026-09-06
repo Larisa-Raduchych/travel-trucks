@@ -1,4 +1,3 @@
-// Зручності кемпера
 export interface Camper {
   id: string;
   name: string;
@@ -20,7 +19,6 @@ export interface Camper {
   totalReviews: number;
 }
 
-// Картка кемпера в каталозі (коротша)
 export interface CamperListItem {
   id: string;
   name: string;
@@ -41,7 +39,6 @@ export interface CamperListItem {
   totalReviews: number;
 }
 
-// Зображення в галереї
 export interface CamperImage {
   id: string;
   camperId: string;
@@ -50,7 +47,6 @@ export interface CamperImage {
   order: number;
 }
 
-// Відповідь каталогу (зі списком + пагінацією)
 export interface CamperListResponse {
   page: number;
   perPage: number;
@@ -59,14 +55,12 @@ export interface CamperListResponse {
   campers: CamperListItem[];
 }
 
-// Доступні фільтри
 export interface FiltersResponse {
   forms: string[];
   transmissions: string[];
   engines: string[];
 }
 
-// Відгук
 export interface Review {
   id: string;
   camperId: string;
@@ -76,7 +70,6 @@ export interface Review {
   createdAt: string;
 }
 
-// Запит на бронювання
 export interface BookingRequest {
   name: string;
   email: string;

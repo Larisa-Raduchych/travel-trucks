@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { FaXmark } from "react-icons/fa6";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { LuX } from "react-icons/lu";
+import { LuMap } from "react-icons/lu";
 import css from "./Filters.module.css";
 
 // що передаємо при Search
@@ -54,11 +54,11 @@ export default function Filters({ onSearch }: FiltersProps) {
 
   return (
     <aside className={css.filters}>
-      {/* Location */}
+      
       <div className={css.group}>
         <label className={css.label}>Location</label>
         <div className={css.inputWrapper}>
-    <FaMapMarkerAlt className={css.mapIcon} />
+    <LuMap className={css.mapIcon} />
     <input
       type="text"
       value={location}
@@ -69,7 +69,7 @@ export default function Filters({ onSearch }: FiltersProps) {
   </div>
       </div>
 
-      {/* Camper form */}
+      
       <div className={css.group}>
         <h3 className={css.title}>Vehicle type</h3>
         {FORMS.map((f) => (
@@ -85,7 +85,7 @@ export default function Filters({ onSearch }: FiltersProps) {
         ))}
       </div>
 
-      {/* Engine */}
+      
       <div className={css.group}>
         <h3 className={css.title}>Engine</h3>
         {ENGINES.map((e) => (
@@ -101,7 +101,7 @@ export default function Filters({ onSearch }: FiltersProps) {
         ))}
       </div>
 
-      {/* Transmission */}
+      
       <div className={css.group}>
         <h3 className={css.title}>Transmission</h3>
         {TRANSMISSIONS.map((t) => (
@@ -117,14 +117,15 @@ export default function Filters({ onSearch }: FiltersProps) {
         ))}
       </div>
 
-      {/* Кнопки */}
+      <div className={css.buttons}>
       <button className={css.searchBtn} onClick={handleSearch}>
         Search
       </button>
       <button className={css.clearBtn} onClick={handleClear}>
-        <FaXmark />
+        <LuX className={css.clearIcon}/>
   Clear filters
       </button>
+      </div>
     </aside>
   );
 }

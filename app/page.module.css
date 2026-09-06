@@ -2,8 +2,9 @@
   min-height: 604px;
   display: flex;
   align-items: center;
- padding: 0 64px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+  padding: 0 64px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("/Picture.jpg") center / cover no-repeat;
 }
 

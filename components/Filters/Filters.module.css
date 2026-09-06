@@ -10,7 +10,6 @@
   background: var(--inputs, #f7f7f7);
 }
 
-/* Location */
 .group {
   display: flex;
   flex-direction: column;
@@ -38,7 +37,6 @@
   color: #6c717b;
 }
 
-/* Заголовки груп фільтрів */
 .title {
   font-size: 20px;
   font-weight: 600;
@@ -46,7 +44,6 @@
   margin-bottom: 24px;
 }
 
-/* Radio-опції */
 .radio {
   display: flex;
   align-items: center;
@@ -58,7 +55,21 @@
   text-transform: capitalize;
 }
 
-/* Кнопка Search */
+.radio input[type="radio"] {
+  accent-color: var(--text);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 312px;
+}
+
 .searchBtn {
      display: flex;
   align-items: center;
@@ -81,7 +92,11 @@
   background: #6d7b75;
 }
 
-/* Кнопка Clear */
+.clearIcon {
+  width: 20px;
+  height: 20px;
+}
+
 .clearBtn {
       display: flex;
   align-items: center;
@@ -114,5 +129,5 @@
 }
 
 .input {
-  padding-left: 44px;   /* місце для іконки */
+  padding-left: 44px;
 }

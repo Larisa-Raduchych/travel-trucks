@@ -4,13 +4,12 @@
   padding: 48px 64px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 88px;
 }
 
-/* Секція 1: галерея + інфо */
 .topSection {
   display: flex;
-  gap: 60px;
+  gap: 24px;
   align-items: flex-start;
 }
 
@@ -23,10 +22,19 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
-/* Секція 2: відгуки + форма */
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  padding: 24px;
+  background: var(--inputs);
+  border-radius: 16px;
+  gap: 8px;
+}
+
 .bottomSection {
   display: flex;
   gap: 60px;
@@ -37,35 +45,48 @@
   flex-shrink: 0;
 }
 
-/* Назва */
 .name {
   font-size: 24px;
   font-weight: 600;
   color: #101828;
 }
 
-/* Рейтинг + локація */
 .meta {
   display: flex;
   gap: 16px;
+  margin-bottom: 16px;
   font-size: 16px;
   color: #101828;
 }
 
-/* Ціна */
 .price {
   font-size: 24px;
   font-weight: 600;
   color: #101828;
+  margin-bottom: 16px;
 }
 
-/* Опис */
 .description {
   color: #475467;
   line-height: 1.5;
 }
 
-/* Теги (feature chips) */
+
+.vehicleDetails {
+  width: 650px;
+  padding: 24px;
+  background: var(--inputs);
+  border-radius: 16px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin-bottom: 24px;
+}
+
+
 .features {
   display: flex;
   flex-wrap: wrap;
@@ -76,49 +97,50 @@
 }
 
 .feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 12px 18px;
+  height: 48px;
   background: #f2f4f7;
+  mix-blend-mode: multiply;
   border-radius: 100px;
   font-size: 16px;
   color: #101828;
   text-transform: capitalize;
 }
 
-/* Таблиця характеристик */
-.vehicleDetails {
-  margin-top: 20px;
-}
-
-.subtitle {
-  font-size: 20px;
-  font-weight: 600;
-  color: #101828;
-  margin-bottom: 24px;
+.divider {
+  height: 1px;
+  background: var(--gray-light);
+  margin: 24px 0;
 }
 
 .specs {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   list-style: none;
   padding: 0;
-  max-width: 500px;
+  width: 100%;
 }
 
 .spec {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #dadde1;
+  
+}
+.spec span {
+  font-family: var(--font-family);
+  font-weight: 400;         
+  font-size: 16px;
+  line-height: 1.5;
+  color:  #101828;
 }
 
-.spec span:first-child {
-  color: #475467;
-}
-
-.spec span:last-child {
-  font-weight: 600;
-  color: #101828;
+.reviewsSection {
+  display: flex;
+  flex-direction: column;
 }
 
 .reviewsCol {
@@ -128,16 +150,26 @@
 .reviewsList {
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 16px;
   list-style: none;
   padding: 0;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 16px;
+  background: var(--inputs);
+  border-radius: 16px;
 }
 
 .reviewHeader {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
 }
 
 .avatar {
@@ -168,7 +200,7 @@
 }
 
 .starEmpty {
-  color: #f2f4f7;
+  color: var(--gray-light);
 }
 
 .reviewText {

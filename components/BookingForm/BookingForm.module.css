@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 641px;
+  width: 650px;   /* (за макетом було 641px) я навмисно вирівняла з Vehicle details у CamperDetails.module.css  */
   padding: 44px;
   background: #fff;
   border: 1px solid var(--gray-light);
@@ -44,7 +44,7 @@
   height: 60px;
   padding: 18px;
   background: var(--inputs, #f7f7f7);
-  border: 1px solid var(--gray-light);
+  border: none;
   border-radius: 12px;
   font-size: 16px;
 }

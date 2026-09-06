@@ -3,7 +3,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCamperById, getCamperReviews } from "@/lib/api";
 import Gallery from "@/components/Gallery/Gallery";
-import { FaStar, FaMapMarkerAlt } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { LuMap } from "react-icons/lu";
 import BookingForm from "@/components/BookingForm/BookingForm";
 import Loader from "@/components/Loader/Loader";
 import css from "./CamperDetails.module.css";
@@ -53,20 +54,25 @@ export default function CamperDetails({ camperId }: CamperDetailsProps) {
 
         {/* Інформація */}
         <div className={css.infoCol}>
+          <div className={css.infoCard}>
           <h1 className={css.name}>{camper.name}</h1>
           <div className={css.meta}>
             <span className={css.rating}>
               <FaStar /> {camper.rating} ({camper.totalReviews} Reviews)
             </span>
             <span className={css.location}>
-              <FaMapMarkerAlt /> {camper.location}
+              <LuMap /> {camper.location}
             </span>
           </div>
           <p className={css.price}>€{camper.price.toFixed(2)}</p>
           <p className={css.description}>{camper.description}</p>
+          </div>
 
-          {/* далі — галерея, характеристики, відгуки, форма (додамо) */}
-          {/* Теги (feature chips) */}
+          {/* Таблиця характеристик */}
+          <div className={css.vehicleDetails}>
+            <h3 className={css.subtitle}>Vehicle details</h3>
+
+{/* Теги (feature chips) */}
           <ul className={css.features}>
             <li className={css.feature}>{camper.transmission}</li>
             <li className={css.feature}>{camper.engine}</li>
@@ -77,9 +83,8 @@ export default function CamperDetails({ camperId }: CamperDetailsProps) {
             ))}
           </ul>
 
-          {/* Таблиця характеристик */}
-          <div className={css.vehicleDetails}>
-            <h3 className={css.subtitle}>Vehicle details</h3>
+<div className={css.divider}></div>
+
             <ul className={css.specs}>
               <li className={css.spec}>
                 <span>Form</span>
@@ -111,9 +116,10 @@ export default function CamperDetails({ camperId }: CamperDetailsProps) {
       </section>
 
       {/* Відгуки */}
-      <section className={css.bottomSection}>
+      <section className={css.reviewsSection}>
+        <h3 className={css.subtitle}>Reviews</h3>
+      <div className={css.bottomSection}>
         <div className={css.reviewsCol}>
-          <h3 className={css.subtitle}>Reviews</h3>
           <ul className={css.reviewsList}>
             {reviews?.map((review) => (
               <li key={review.id} className={css.review}>
@@ -138,6 +144,7 @@ export default function CamperDetails({ camperId }: CamperDetailsProps) {
         <div className={css.formCol}>
           <BookingForm camperId={camper.id} />
         </div>
+      </div>
       </section>
     </div>
   );
